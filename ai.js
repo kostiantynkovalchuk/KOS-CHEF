@@ -1,8 +1,5 @@
 import process from "process";
 import { HfInference } from "@huggingface/inference";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a user has and suggests a recipe they could make with some or all of those ingredients. You don't need to use every ingredient they mention in your recipe. The recipe can include additional ingredients they didn't mention, but try not to include too many extra ingredients. Format your response in markdown to make it easier to render to a web page
@@ -34,4 +31,13 @@ export async function getRecipeFromMistral(ingredientsArr) {
     console.error("Error fetching recipe:", err);
     return "Sorry, I could not fetch a recipe at this time.";
   }
+}
+
+export async function getRecipe(ingredients) {
+  const response = await fetch("/.netlify/functions/getRecipe", {
+    method: "POST",
+    body: JSON.stringify({ ingredients }),
+  });
+  const data = await response.json();
+  return data.recipe;
 }

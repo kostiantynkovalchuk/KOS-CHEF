@@ -1,14 +1,14 @@
 import React from "react";
 import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
-import { getRecipeFromMistral } from "./ai";
+import { getRecipe } from "./ai"; // Import the getRecipe function
 
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipe, setRecipe] = React.useState("");
 
-  async function getRecipe() {
-    const recipeMarkdown = await getRecipeFromMistral(ingredients);
+  async function fetchRecipe() {
+    const recipeMarkdown = await getRecipe(ingredients);
     setRecipe(recipeMarkdown);
   }
 
@@ -35,7 +35,7 @@ export default function Main() {
       </form>
 
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
+        <IngredientsList ingredients={ingredients} getRecipe={fetchRecipe} />
       )}
 
       {recipe && <ClaudeRecipe recipe={recipe} />}
