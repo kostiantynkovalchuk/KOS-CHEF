@@ -38,5 +38,10 @@ module.exports = {
       Buffer: ["buffer", "Buffer"],
       process: "process/browser",
     }),
+    new webpack.DefinePlugin({
+      "process.env.HF_ACCESS_TOKEN": JSON.stringify(
+        process.env.HF_ACCESS_TOKEN
+      ),
+    }),
   ],
 };
