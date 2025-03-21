@@ -6,10 +6,13 @@ import { getRecipe } from "./ai"; // Import the getRecipe function
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipe, setRecipe] = React.useState("");
+  const [loading, setLoading] = React.useState(false); // Add loading state
 
   async function fetchRecipe() {
+    setLoading(true); // Set loading to true before fetching the recipe
     const recipeMarkdown = await getRecipe(ingredients);
     setRecipe(recipeMarkdown);
+    setLoading(false); // Set loading to false after fetching the recipe
   }
 
   function addIngredient(event) {
@@ -35,7 +38,11 @@ export default function Main() {
       </form>
 
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} getRecipe={fetchRecipe} />
+        <IngredientsList
+          ingredients={ingredients}
+          getRecipe={fetchRecipe}
+          loading={loading}
+        />
       )}
 
       {recipe && <ClaudeRecipe recipe={recipe} />}
