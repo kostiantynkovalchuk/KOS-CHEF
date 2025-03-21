@@ -1,3 +1,11 @@
+// This function is used to get a recipe from the Mistral AI model
+// It takes a list of ingredients as input and returns a recipe
+// The function is used in the getRecipe function in ai.js
+// The getRecipe function is used in the Main component in Main.jsx
+// The Main component is rendered in App.jsx
+// The App component is rendered in index.js
+/
+
 const { HfInference } = require("@huggingface/inference");
 
 exports.handler = async (event, context) => {
