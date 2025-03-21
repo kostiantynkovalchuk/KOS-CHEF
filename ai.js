@@ -8,7 +8,6 @@ You are an assistant that receives a list of ingredients that a user has and sug
 // Make sure you set an environment variable in Scrimba
 // for HF_ACCESS_TOKEN
 const hfAccessToken = process.env.HF_ACCESS_TOKEN;
-console.log("HF_ACCESS_TOKEN:", hfAccessToken); // Log the token value for debugging
 
 const hf = new HfInference(hfAccessToken);
 
