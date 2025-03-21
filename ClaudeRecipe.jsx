@@ -7,7 +7,7 @@ export default function ClaudeRecipe({ recipe, loading }) {
       {loading ? (
         <div className="spinner"></div>
       ) : (
-        <div dangerouslySetInnerHTML={{ __html: recipe }} />
+        <ReactMarkdown>{recipe}</ReactMarkdown>
       )}
     </section>
   );
