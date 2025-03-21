@@ -35,8 +35,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 12px;
-  height: auto; /* Allow height to adjust */
-  flex-wrap: wrap;
+  height: 38px;
 }
 
 .add-ingredient-form > input {
@@ -46,7 +45,7 @@ main {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   flex-grow: 1;
   min-width: 150px;
-  max-width: 100%; /* Full width on mobile */
+  max-width: 400px;
 }
 
 .add-ingredient-form > button {
@@ -58,7 +57,6 @@ main {
   width: 150px;
   font-size: 0.875rem;
   font-weight: 500;
-  cursor: pointer;
 }
 
 .add-ingredient-form > button::before {
