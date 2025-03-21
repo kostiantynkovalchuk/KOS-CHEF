@@ -45,7 +45,7 @@ export default function Main() {
         />
       )}
 
-      {recipe && <ClaudeRecipe recipe={recipe} />}
+      <ClaudeRecipe recipe={recipe} loading={loading} />
     </main>
   );
 }
