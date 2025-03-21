@@ -35,8 +35,8 @@ main {
   display: flex;
   justify-content: center;
   gap: 12px;
-  height: 38px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  height: auto; /* Allow height to adjust */
+  flex-wrap: wrap;
 }
 
 .add-ingredient-form > input {
@@ -46,7 +46,7 @@ main {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   flex-grow: 1;
   min-width: 150px;
-  max-width: 400px;
+  max-width: 100%; /* Full width on mobile */
 }
 
 .add-ingredient-form > button {
@@ -58,6 +58,7 @@ main {
   width: 150px;
   font-size: 0.875rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .add-ingredient-form > button::before {
@@ -67,6 +68,7 @@ main {
 
 ul.ingredients-list {
   margin-bottom: 48px;
+  padding-left: 20px; /* Add padding for better readability */
 }
 
 ul.ingredients-list > li {
@@ -81,7 +83,7 @@ ul.ingredients-list > li {
   border-radius: 8px;
   background: #f0efeb;
   padding: 10px 28px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  flex-wrap: wrap;
 }
 
 .get-recipe-container h3 {
@@ -122,38 +124,55 @@ ul.ingredients-list > li {
 
 /* Media queries for mobile optimization */
 @media (max-width: 600px) {
+  header {
+    height: 60px; /* Reduce header height */
+    gap: 8px; /* Reduce gap between elements */
+  }
+
+  header > h1 {
+    font-size: 1.25rem; /* Reduce font size */
+  }
+
   main {
-    padding: 20px 15px 10px;
+    padding: 20px 15px 10px; /* Reduce padding */
   }
 
   .add-ingredient-form {
     gap: 8px;
+    flex-direction: column; /* Stack inputs and buttons vertically */
   }
 
   .add-ingredient-form > input {
-    max-width: 100%;
+    width: 100%; /* Full width */
+    max-width: none; /* Remove max-width */
   }
 
   .add-ingredient-form > button {
-    width: 100%;
+    width: 100%; /* Full width */
   }
 
   .get-recipe-container {
     padding: 10px 15px;
-    flex-direction: column;
+    flex-direction: column; /* Stack content vertically */
     align-items: flex-start;
+    gap: 10px; /* Add gap between elements */
   }
 
   .get-recipe-container h3 {
-    font-size: 1rem;
+    font-size: 1rem; /* Reduce font size */
   }
 
   .get-recipe-container p {
-    font-size: 0.75rem;
+    font-size: 0.75rem; /* Reduce font size */
   }
 
   .get-recipe-container button {
-    width: 100%;
-    margin-top: 10px;
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Add margin to separate from text */
+  }
+
+  .suggested-recipe-container {
+    font-size: 1rem; /* Reduce font size */
+    line-height: 24px; /* Adjust line height */
   }
 }
