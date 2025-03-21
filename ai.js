@@ -1,3 +1,4 @@
+import process from "process";
 import { HfInference } from "@huggingface/inference";
 import dotenv from "dotenv";
 
