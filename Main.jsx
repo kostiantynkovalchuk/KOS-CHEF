@@ -12,21 +12,26 @@ export default function Main() {
     setRecipe(recipeMarkdown);
   }
 
-  function addIngredient(formData) {
+  function addIngredient(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
     const newIngredient = formData.get("ingredient");
-    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+    if (newIngredient) {
+      setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+      event.target.reset();
+    }
   }
 
   return (
     <main>
-      <form action={addIngredient} className="add-ingredient-form">
+      <form onSubmit={addIngredient} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
           name="ingredient"
         />
-        <button>Add ingredient</button>
+        <button type="submit">Add ingredient</button>
       </form>
 
       {ingredients.length > 0 && (
