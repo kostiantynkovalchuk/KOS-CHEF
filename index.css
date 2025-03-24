@@ -91,6 +91,34 @@ main {
   margin-top: 10px;
 }
 
+/* Recipe section styles */
+.suggested-recipe-container {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.suggested-recipe-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.suggested-recipe-container h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.suggested-recipe-container ul,
+.suggested-recipe-container ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.suggested-recipe-container li {
+  margin-bottom: 5px;
+}
+
 /* Desktop overrides */
 @media (min-width: 600px) {
   header {
@@ -123,5 +151,21 @@ main {
 
   .add-ingredient-form > button {
     width: 150px;
+  }
+
+  .get-recipe-container {
+    text-align: left;
+  }
+
+  .suggested-recipe-container {
+    padding: 20px;
+  }
+
+  .suggested-recipe-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .suggested-recipe-container h3 {
+    font-size: 1.2rem;
   }
 }
