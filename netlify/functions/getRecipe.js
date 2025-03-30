@@ -27,6 +27,8 @@ exports.handler = async (event) => {
       throw new Error("Hugging Face access token not configured");
     }
 
+    console.log("HF_ACCESS_TOKEN:", process.env.HF_ACCESS_TOKEN);
+
     const { ingredients } = JSON.parse(event.body);
 
     // Validate input
