@@ -98,7 +98,9 @@ exports.handler = async (event) => {
       }),
     };
   } catch (err) {
-    console.error("Error:", err);
+    console.error("Error in getRecipe function:", err.message);
+    console.error("Stack trace:", err.stack);
+
     return {
       statusCode: 500,
       headers: {
