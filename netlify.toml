@@ -1,0 +1,8 @@
+[build]
+  functions = "netlify/functions" # Path to your serverless functions directory
+  publish = "dist"               # Path to the directory containing your built frontend files
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
