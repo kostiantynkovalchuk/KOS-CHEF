@@ -7,132 +7,170 @@ body {
   margin: 0;
   font-family: Inter, sans-serif;
   background-color: #fafaf8;
+  font-size: 16px; /* Base font size increased */
 }
 
+/* Header adjustments */
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  height: 60px;
+  gap: 12px; /* Increased gap */
+  height: 70px; /* Increased height */
   background-color: white;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
     0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-  padding: 10px;
+  padding: 15px; /* Increased padding */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header > img {
-  width: 35px;
+  width: 45px; /* Increased size */
 }
 
 header > h1 {
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.5rem; /* Increased font size */
 }
 
+/* Main content adjustments */
 main {
-  padding: 15px;
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
+/* Form adjustments */
 .add-ingredient-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 12px; /* Increased gap */
+  margin-bottom: 25px; /* Increased margin */
+  max-width: 100%;
 }
 
 .add-ingredient-form > input {
-  border-radius: 6px;
+  border-radius: 8px; /* Slightly larger */
   border: 1px solid #d1d5db;
-  padding: 9px 13px;
+  padding: 12px 15px; /* Increased padding */
   width: 100%;
+  font-size: 1rem; /* Increased font size */
 }
 
 .add-ingredient-form > button {
-  border-radius: 6px;
+  border-radius: 8px; /* Slightly larger */
   border: none;
   background-color: #141413;
   color: #fafaf8;
-  padding: 9px 13px;
-  font-size: 0.875rem;
+  padding: 12px 15px; /* Increased padding */
+  font-size: 1rem; /* Increased font size */
   font-weight: 500;
   width: 100%;
 }
 
+/* Ingredients list adjustments */
 .ingredients-list {
   padding: 0;
   list-style-type: none;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Increased font size */
+  margin: 15px 0; /* Added margin */
 }
 
 .ingredients-list li {
-  padding: 5px 0;
+  padding: 8px 0; /* Increased padding */
+  border-bottom: 1px solid #eee; /* Added separator */
 }
 
+/* Recipe button container */
 .get-recipe-container {
   background-color: #f3f3f3;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 20px; /* Increased padding */
+  border-radius: 10px; /* Increased radius */
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px; /* Increased margin */
 }
 
 .get-recipe-container h3 {
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Increased margin */
+  font-size: 1.3rem; /* Increased font size */
 }
 
 .get-recipe-container button {
   background-color: #d09072;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 12px 20px; /* Increased padding */
+  border-radius: 8px; /* Increased radius */
   color: white;
-  font-size: 0.9rem;
-  margin-top: 10px;
+  font-size: 1rem; /* Increased font size */
+  margin-top: 15px; /* Increased margin */
+  width: 100%;
+  max-width: 300px;
 }
 
 /* Recipe section styles */
 .suggested-recipe-container {
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
+  padding: 20px; /* Increased padding */
+  border-radius: 10px; /* Increased radius */
+  margin-top: 25px; /* Increased margin */
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .suggested-recipe-container h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.5rem; /* Increased font size */
+  margin-bottom: 15px; /* Increased margin */
 }
 
 .suggested-recipe-container h3 {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.3rem; /* Increased font size */
+  margin-bottom: 10px; /* Increased margin */
 }
 
 .suggested-recipe-container ul,
 .suggested-recipe-container ol {
-  padding-left: 20px;
-  margin-bottom: 10px;
+  padding-left: 25px; /* Increased padding */
+  margin-bottom: 15px; /* Increased margin */
 }
 
 .suggested-recipe-container li {
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Increased margin */
+  font-size: 1.1rem; /* Increased font size */
+  line-height: 1.5; /* Better line spacing */
 }
 
 /* Spinner styles */
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 5px solid rgba(0, 0, 0, 0.1); /* Thicker border */
   border-left-color: #000;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px; /* Larger spinner */
+  height: 50px; /* Larger spinner */
   animation: spin 1s linear infinite;
-  margin: 20px auto;
+  margin: 30px auto; /* Increased margin */
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  body {
+    font-size: 18px; /* Even larger base font for very small devices */
+  }
+
+  .add-ingredient-form > input,
+  .add-ingredient-form > button {
+    padding: 14px 18px; /* More padding for touch targets */
+  }
+
+  .get-recipe-container button {
+    padding: 14px 20px;
   }
 }
 
